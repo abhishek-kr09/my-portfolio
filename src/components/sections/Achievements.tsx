@@ -14,7 +14,7 @@ export const Achievements: React.FC = () => {
   if (allItems.length === 0) return null;
 
   return (
-    <section id="achievements" className="relative py-24 px-6 bg-slate-900/30">
+    <section id="achievements" className="relative bg-slate-900/30 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { AnimatedBackground } from './components/layout/AnimatedBackground';
 import { Splash } from './components/layout/Splash';
 import { Hero } from './components/sections/Hero';
@@ -12,6 +13,8 @@ import resumeData from './data/resume.json';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const githubUrl = resumeData.basics.links.find((link) => link.name === 'GitHub')?.url;
+  const linkedinUrl = resumeData.basics.links.find((link) => link.name === 'LinkedIn')?.url;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30">
@@ -29,9 +32,52 @@ export default function App() {
             <Projects />
             <Skills />
             <Education />
+
+            <section id="contact" className="px-4 py-20 sm:px-6">
+              <div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md sm:p-10">
+                <p className="text-sm font-medium text-blue-300">Open to internships and full-time roles</p>
+                <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's build something useful together.</h2>
+                <p className="mt-4 max-w-2xl text-slate-300">
+                  I am currently focused on backend engineering, AI applications, and product-grade full-stack systems.
+                  If your team is building ambitious products, I would love to collaborate.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a
+                    href={`mailto:${resumeData.basics.email}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-transform hover:scale-[1.02]"
+                  >
+                    <Mail className="h-4 w-4" />
+                    Contact Me
+                  </a>
+                  {githubUrl && (
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                    >
+                      <Github className="h-4 w-4" />
+                      GitHub
+                    </a>
+                  )}
+                  {linkedinUrl && (
+                    <a
+                      href={linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
+                    </a>
+                  )}
+                </div>
+              </div>
+            </section>
             
             <footer className="border-t border-white/10 py-8 text-center text-sm text-slate-500">
-              <p>© {new Date().getFullYear()} {resumeData.basics.name}. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} {resumeData.basics.name}. Built with React, Vite, and Tailwind CSS.</p>
             </footer>
           </main>
         </>

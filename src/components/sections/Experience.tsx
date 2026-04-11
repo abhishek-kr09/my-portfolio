@@ -8,8 +8,25 @@ export const Experience: React.FC = () => {
   const { experience } = resumeData;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
+  const renderHighlightedText = (text: string) => {
+    const metricRegex = /(\d+(?:\.\d+)?%?|\d+\+|R-squared|RMSE)/gi;
+    const parts = text.split(metricRegex);
+
+    return parts.map((part, idx) => {
+      if (part.match(metricRegex)) {
+        return (
+          <span key={`${part}-${idx}`} className="font-semibold text-blue-400">
+            {part}
+          </span>
+        );
+      }
+
+      return <React.Fragment key={`${part}-${idx}`}>{part}</React.Fragment>;
+    });
+  };
+
   return (
-    <section id="experience" className="relative py-24 px-6">
+    <section id="experience" className="relative px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,16 +99,10 @@ export const Experience: React.FC = () => {
                         <div className="mt-6 pt-6 border-t border-white/10">
                           <ul className="space-y-4">
                             {job.bullets.map((bullet, i) => {
-                              // Highlight numbers/metrics
-                              const highlightedBullet = bullet.replace(
-                                /(\d+(?:\.\d+)?%?|\d+\+?)/g, 
-                                '<span class="text-blue-400 font-semibold">$1</span>'
-                              );
-
                               return (
                                 <li key={i} className="flex gap-3 text-slate-300 leading-relaxed">
                                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500/50" />
-                                  <span dangerouslySetInnerHTML={{ __html: highlightedBullet }} />
+                                  <span>{renderHighlightedText(bullet)}</span>
                                 </li>
                               );
                             })}

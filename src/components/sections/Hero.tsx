@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-20">
+    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-4 pt-20 sm:px-6">
       <div className="z-10 flex max-w-4xl flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

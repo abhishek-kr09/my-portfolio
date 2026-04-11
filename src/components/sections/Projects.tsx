@@ -7,7 +7,7 @@ export const Projects: React.FC = () => {
   const { projects } = resumeData;
 
   return (
-    <section id="projects" className="relative py-24 px-6">
+    <section id="projects" className="relative px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,6 +30,10 @@ export const Projects: React.FC = () => {
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-md transition-all hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)]"
             >
               <div className="p-8 md:p-10">
+                <div className="mb-4 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+                  Project {index + 1}
+                </div>
+
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
@@ -50,14 +54,14 @@ export const Projects: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     {project.links.map((link, i) => (
                       <a
                         key={i}
                         href={link.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-slate-300 transition-all hover:bg-white/10 hover:text-white border border-white/10 hover:border-white/20"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 transition-all hover:border-white/20 hover:bg-white/10 hover:text-white"
                         title={link.name}
                       >
                         {link.name.toLowerCase().includes('source') || link.name.toLowerCase().includes('github') ? (
@@ -65,6 +69,7 @@ export const Projects: React.FC = () => {
                         ) : (
                           <ExternalLink className="h-5 w-5" />
                         )}
+                        <span>{link.name.toLowerCase().includes('source') || link.name.toLowerCase().includes('github') ? 'GitHub' : 'Live Demo'}</span>
                       </a>
                     ))}
                   </div>

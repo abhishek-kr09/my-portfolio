@@ -44,7 +44,8 @@
         "Structured backend routes to handle concurrent user interactions and secure session management."
       ],
       "links": [
-        { "name": "Source Code", "url": "#" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/travelup" },
+        { "name": "Live Demo", "url": "https://travelup-airbnb.vercel.app/listings" }
       ]
     },
     {
@@ -57,7 +58,8 @@
         "Applied ensemble learning (LSTM + XGBoost) achieving R-squared of 0.87 and 18% RMSE improvement over baseline."
       ],
       "links": [
-        { "name": "Source Code", "url": "#" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/Transfer-IQ" },
+        { "name": "Live Demo", "url": "https://transfer-iq.streamlit.app/" }
       ]
     },
     {
@@ -70,7 +72,8 @@
         "Deployed a scalable production system supporting concurrent AI content generation requests."
       ],
       "links": [
-        { "name": "Source Code", "url": "#" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/exam-notes-generator" },
+        { "name": "Live Demo", "url": "https://exam-notes-generator-client.onrender.com/" }
       ]
     }
   ],

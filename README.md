@@ -1,20 +1,96 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Abhishek Kumar Portfolio
 
-# Run and deploy your AI Studio app
+A modern developer portfolio built with React, TypeScript, Vite, and Tailwind CSS (v4).
 
-This contains everything you need to run your app locally.
+## Tech Stack
 
-View your app in AI Studio: https://ai.studio/apps/e5108049-e8cc-4524-95f3-4f5074b43c0d
+- React 19
+- TypeScript 5
+- Vite 6
+- Tailwind CSS 4
+- Motion (Framer Motion)
+- Lucide Icons
 
-## Run Locally
+## Features
 
-**Prerequisites:**  Node.js
+- Responsive single-page portfolio layout
+- Animated hero and section transitions
+- Scroll-aware desktop/mobile navigation
+- Structured sections for experience, projects, achievements, skills, and education
+- Project cards with GitHub and live demo links
+- Contact CTA section with direct email and social links
+- SEO and social sharing metadata in HTML
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Prerequisites
+
+- Node.js 20+ (recommended)
+- npm 10+
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start development server
+
+```bash
+npm run dev
+```
+
+The app runs on http://localhost:3000.
+
+## Available Scripts
+
+- `npm run dev`: Start Vite dev server
+- `npm run build`: Create production build
+- `npm run preview`: Preview production build locally
+- `npm run lint`: Run TypeScript type check (`tsc --noEmit`)
+
+## Project Structure
+
+```text
+src/
+   components/
+      layout/      # Navigation, splash, animated background
+      sections/    # Hero, Experience, Projects, Skills, etc.
+   data/
+      resume.json  # Portfolio content source of truth
+   App.tsx
+   main.tsx
+   index.css
+```
+
+## Content Customization
+
+Edit the following file to update content:
+
+- `src/data/resume.json`
+
+You can update:
+
+- Basics (name, title, summary, email, links)
+- Experience bullets
+- Projects (stack, bullets, GitHub/live links)
+- Skills and education
+- Achievements and certifications
+
+## Deployment
+
+This app can be deployed to any static hosting provider:
+
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+Typical deployment flow:
+
+1. Run `npm run build`
+2. Deploy the generated `dist/` directory
+
+## License
+
+Personal portfolio project by Abhishek Kumar.

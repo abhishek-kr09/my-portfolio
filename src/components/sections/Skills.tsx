@@ -6,7 +6,7 @@ export const Skills: React.FC = () => {
   const { skills } = resumeData;
 
   return (
-    <section id="skills" className="relative py-24 px-6 bg-slate-900/30">
+    <section id="skills" className="relative bg-slate-900/30 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export const Skills: React.FC = () => {
           className="mb-16"
         >
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Technical Skills</h2>
-          <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
+          <div className="mt-2 h-1 w-20 rounded-full bg-linear-to-r from-purple-500 to-pink-500" />
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

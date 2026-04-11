@@ -36,7 +36,7 @@ export const Splash: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
           transition={{ duration: 0.5 }}
           className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm"
         >
-          <span className="bg-gradient-to-br from-blue-400 to-indigo-600 bg-clip-text text-4xl font-bold tracking-tighter text-transparent">
+          <span className="bg-linear-to-br from-blue-400 to-indigo-600 bg-clip-text text-4xl font-bold tracking-tighter text-transparent">
             AK
           </span>
           <motion.div 
@@ -51,7 +51,7 @@ export const Splash: React.FC<{ onComplete: () => void }> = ({ onComplete }) => 
         <div className="flex flex-col items-center gap-3">
           <div className="h-1 w-48 overflow-hidden rounded-full bg-white/10">
             <motion.div 
-              className="h-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              className="h-full bg-linear-to-r from-blue-500 to-indigo-500"
               style={{ width: `${progress}%` }}
               layoutId="loading-bar"
             />
