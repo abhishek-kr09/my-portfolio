@@ -1,0 +1,119 @@
+{
+  "basics": {
+    "name": "Abhishek Kumar",
+    "title": "Full-Stack Developer and AI Enthusiast",
+    "summary": "Full-Stack Developer and AI Enthusiast with a strong foundation in backend development, data structures, and algorithms. Experienced in building secure, scalable web applications with modern frameworks and authentication systems and exploring AI-driven solutions to solve real-world problems and deliver meaningful user impact.",
+    "location": "Kolkata",
+    "email": "kumarabhishek56447@email.com",
+    "phone": "+91-9113483897",
+    "links": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/abhishek-kr18" },
+      { "name": "GitHub", "url": "https://github.com/abhishek-kr09" }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Infosys Springboard",
+      "role": "AI Intern",
+      "dates": "Jan 2026 – Mar 2026",
+      "location": "",
+      "bullets": [
+        "Built an end-to-end ML pipeline using Python, Pandas, and Scikit-learn to predict football transfer values from 10,000+ match records.",
+        "Engineered 25+ performance features and optimized regression models (Linear Regression, XGBoost), improving RMSE by 18% and achieving R-squared of 0.87."
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "title": "300+ DSA Problems",
+      "context": "Solved 300+ Data Structures and Algorithms problems across arrays, strings, hashing, recursion, and trees on platforms like LeetCode and GeeksforGeeks."
+    },
+    {
+      "title": "Open Source Contributor",
+      "context": "Contributor at GirlScript Summer of Code 2024."
+    }
+  ],
+  "projects": [
+    {
+      "title": "TravelUp",
+      "dates": "Mar 2025 – Apr 2025",
+      "stack": "MongoDB, Express.js, React.js, Node.js, Stripe",
+      "bullets": [
+        "Developed a full-stack travel platform using the MERN stack with JWT-based authentication and RESTful API architecture.",
+        "Designed MongoDB schemas and implemented CRUD operations for listings, bookings, and user management.",
+        "Structured backend routes to handle concurrent user interactions and secure session management."
+      ],
+      "links": [
+        { "name": "Source Code", "url": "#" }
+      ]
+    },
+    {
+      "title": "TransferIQ: Player Transfer Value Prediction",
+      "dates": "Jan 2026 – Mar 2026",
+      "stack": "Python, LSTM, XGBoost, NLP",
+      "bullets": [
+        "Built an ML pipeline combining performance, injury, and sentiment data to predict football player transfer values.",
+        "Developed univariate and multivariate LSTM models for forecasting transfer values across multiple time horizons.",
+        "Applied ensemble learning (LSTM + XGBoost) achieving R-squared of 0.87 and 18% RMSE improvement over baseline."
+      ],
+      "links": [
+        { "name": "Source Code", "url": "#" }
+      ]
+    },
+    {
+      "title": "AI Exam Notes Generator",
+      "dates": "Oct 2025 – Dec 2025",
+      "stack": "React, Node.js, MongoDB, Gemini API, Stripe",
+      "bullets": [
+        "Engineered an AI SaaS platform generating exam notes, diagrams, and revision summaries using LLM APIs.",
+        "Implemented a credit-based monetization system with Stripe payments and token-based authentication.",
+        "Deployed a scalable production system supporting concurrent AI content generation requests."
+      ],
+      "links": [
+        { "name": "Source Code", "url": "#" }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["C++", "Python", "JavaScript"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express.js", "RESTful APIs", "MVC Architecture"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["React.js", "Tailwind CSS"]
+    },
+    {
+      "category": "Databases",
+      "items": ["MongoDB", "SQL", "Redis"]
+    },
+    {
+      "category": "Security",
+      "items": ["JWT Authentication", "Password Hashing (bcrypt)", "Role-Based Access Control"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub", "Docker", "Postman"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Heritage Institute of Technology, Kolkata",
+      "degree": "B.Tech in Computer Science and Engineering (IoT and CSBT)",
+      "dates": "2023 – 2027",
+      "score": "CGPA: 9.0 / 10"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Google Cybersecurity Professional Certificate",
+      "context": "Completed Google Cybersecurity Professional Certificate, gaining hands-on exposure to network security, threat detection, and incident response."
+    }
+  ],
+  "awards": [],
+  "extra": []
+}
