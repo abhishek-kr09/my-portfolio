@@ -36,9 +36,12 @@ export const Education: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
                     <p className="mt-1 text-lg text-slate-300">{edu.degree}</p>
-                    <p className="mt-2 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-slate-300">
-                      {edu.score}
-                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <p className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-slate-300">
+                        {edu.score}
+                      </p>
+                      {edu.location && <p className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-slate-300">{edu.location}</p>}
+                    </div>
                   </div>
                 </div>
                 <div className="text-slate-400 font-medium bg-slate-900/50 px-4 py-2 rounded-full border border-white/5 self-start md:self-auto">

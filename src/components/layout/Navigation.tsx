@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Briefcase, Contact, FolderGit2, GraduationCap, House, Sparkles } from 'lucide-react';
+import { Award, Briefcase, Contact, FolderGit2, GraduationCap, House, Sparkles, Trophy } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
   { name: 'Home', href: '#hero' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Achievements', href: '#achievements' },
-  { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Achievements', href: '#achievements' },
+  { name: 'Profiles', href: '#coding-profiles' },
   { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ];
 
 const mobileNavItems = [
   { name: 'Home', href: '#hero', icon: House },
+  { name: 'Skills', href: '#skills', icon: Sparkles },
   { name: 'Work', href: '#experience', icon: Briefcase },
   { name: 'Projects', href: '#projects', icon: FolderGit2 },
-  { name: 'Skills', href: '#skills', icon: Sparkles },
+  { name: 'Awards', href: '#achievements', icon: Award },
+  { name: 'Profiles', href: '#coding-profiles', icon: Trophy },
   { name: 'Study', href: '#education', icon: GraduationCap },
   { name: 'Contact', href: '#contact', icon: Contact },
 ];
@@ -64,7 +67,7 @@ export const Navigation: React.FC = () => {
       transition={{ duration: 0.8, delay: 1.5 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-40 flex justify-center py-4 transition-all duration-300",
-        isScrolled ? "bg-slate-950/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+        isScrolled ? "bg-slate-950/75 backdrop-blur-md shadow-[0_8px_30px_rgba(2,6,23,0.28)]" : "bg-transparent"
       )}
     >
       <ul className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md">
@@ -97,7 +100,7 @@ export const Navigation: React.FC = () => {
 
       {/* Mobile Bottom Nav */}
       <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-md">
-        <ul className="grid grid-cols-6 items-center rounded-2xl border border-white/10 bg-slate-900/90 p-1.5 backdrop-blur-xl shadow-2xl">
+        <ul className="grid grid-cols-7 items-center rounded-2xl border border-white/10 bg-slate-900/90 p-1.5 backdrop-blur-xl shadow-2xl">
           {mobileNavItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
             const Icon = item.icon;

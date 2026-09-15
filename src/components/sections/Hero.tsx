@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import resumeData from '../../data/resume.json';
 
 export const Hero: React.FC = () => {
@@ -11,8 +11,29 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center px-4 pt-20 sm:px-6">
-      <div className="z-10 flex max-w-4xl flex-col items-center text-center">
+    <section id="hero" className="relative flex min-h-screen items-center px-4 pb-16 pt-28 sm:px-6 lg:pt-24">
+      <div className="z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="relative mx-auto w-full max-w-sm lg:mx-0"
+        >
+          <div className="absolute -inset-4 rounded-[2.5rem] border border-blue-400/20 bg-blue-500/10 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-slate-900/80 p-2 shadow-2xl shadow-blue-950/40">
+            <img
+              src="/ak.png"
+              alt="Portrait of Abhishek Kumar"
+              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
+            />
+            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/15 bg-slate-950/75 p-4 backdrop-blur-md">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">Currently building</p>
+              <p className="mt-1 text-sm font-medium text-white">Reliable systems and useful AI products</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="flex max-w-3xl flex-col items-center text-center lg:items-start lg:text-left">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,23 +92,29 @@ export const Hero: React.FC = () => {
             </span>
           </button>
           
-          <button
-            onClick={() => window.print()}
+          <a
+            href="/Abhishek_Kumar_Resume.pdf"
+            download="Abhishek_Kumar_Resume.pdf"
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95"
           >
             <span className="relative flex items-center gap-2">
               <Download className="h-4 w-4" />
               Download Resume
             </span>
-          </button>
+          </a>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-16 flex items-center gap-6 text-slate-400"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-slate-400 lg:justify-start"
         >
+          <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-400" />{basics.location}</span>
+          <a href={`tel:${basics.phone}`} className="inline-flex items-center gap-2 transition-colors hover:text-white">
+            <Phone className="h-4 w-4" />
+            {basics.phone}
+          </a>
           <a href={basics.links.find(l => l.name === 'GitHub')?.url} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">
             <Github className="h-6 w-6" />
             <span className="sr-only">GitHub</span>
@@ -102,22 +129,8 @@ export const Hero: React.FC = () => {
           </a>
         </motion.div>
       </div>
+      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="flex h-10 w-6 justify-center rounded-full border-2 border-slate-500/30 p-1"
-        >
-          <div className="h-2 w-1.5 rounded-full bg-slate-400" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

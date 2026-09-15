@@ -8,6 +8,7 @@ import { Achievements } from './components/sections/Achievements';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
 import { Education } from './components/sections/Education';
+import { CodingProfiles } from './components/sections/CodingProfiles';
 import { Navigation } from './components/layout/Navigation';
 import resumeData from './data/resume.json';
 
@@ -27,19 +28,20 @@ export default function App() {
           
           <main className="relative z-10 pb-24 md:pb-0">
             <Hero />
-            <Experience />
-            <Achievements />
-            <Projects />
             <Skills />
+            <Experience />
+            <Projects />
+            <Achievements />
+            <CodingProfiles />
             <Education />
 
             <section id="contact" className="px-4 py-20 sm:px-6">
               <div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md sm:p-10">
-                <p className="text-sm font-medium text-blue-300">Open to internships and full-time roles</p>
-                <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's build something useful together.</h2>
+                <p className="text-sm font-medium text-blue-300">Open to Software Development Engineer roles</p>
+                <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Let&apos;s build dependable software together.</h2>
                 <p className="mt-4 max-w-2xl text-slate-300">
-                  I am currently focused on backend engineering, AI applications, and product-grade full-stack systems.
-                  If your team is building ambitious products, I would love to collaborate.
+                  I am focused on systems programming, backend engineering, and practical AI applications.
+                  If your team is building thoughtful products and infrastructure, I would love to connect.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

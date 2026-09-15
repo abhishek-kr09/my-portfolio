@@ -1,90 +1,136 @@
 {
   "basics": {
     "name": "Abhishek Kumar",
-    "title": "Full-Stack Developer and AI Enthusiast",
-    "summary": "Full-Stack Developer and AI Enthusiast with a strong foundation in backend development, data structures, and algorithms. Experienced in building secure, scalable web applications with modern frameworks and authentication systems and exploring AI-driven solutions to solve real-world problems and deliver meaningful user impact.",
-    "location": "Kolkata",
-    "email": "kumarabhishek56447@email.com",
+    "title": "Software Development Engineer | Systems, Backend & AI",
+    "summary": "Computer Science undergraduate targeting Software Development Engineer roles, with strong foundations in data structures, algorithms, C++, object-oriented design, operating systems, computer networks, and DBMS. I build multithreaded systems software, backend services, REST APIs, and document-processing applications with C++, Python, and JavaScript.",
+    "location": "Kolkata, India",
+    "email": "kumarabhishek56447@gmail.com",
     "phone": "+91-9113483897",
     "links": [
-      { "name": "LinkedIn", "url": "https://linkedin.com/in/abhishek-kr18" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/abhishek-kr18/" },
       { "name": "GitHub", "url": "https://github.com/abhishek-kr09" }
     ]
   },
   "experience": [
     {
       "company": "Infosys Springboard",
-      "role": "AI Intern",
+      "role": "Machine Learning Intern",
       "dates": "Jan 2026 – Mar 2026",
-      "location": "",
+      "location": "Remote, India",
+      "certificateUrl": "https://drive.google.com/file/d/1Hkkn0RXSaNwfrfsTnWh2b1d4AJWlWQPN/view?usp=drive_link",
       "bullets": [
-        "Built an end-to-end ML pipeline using Python, Pandas, and Scikit-learn to predict football transfer values from 10,000+ match records.",
-        "Engineered 25+ performance features and optimized regression models (Linear Regression, XGBoost), improving RMSE by 18% and achieving R-squared of 0.87."
+        "Constructed a modular Python machine learning pipeline to predict football player transfer values using 10,000+ historical match records.",
+        "Derived 10+ predictive features from player statistics and prepared structured training data for model evaluation.",
+        "Evaluated Linear Regression and XGBoost models, achieving an R-squared score of 0.97 on the evaluation dataset."
       ]
     }
   ],
   "achievements": [
     {
-      "title": "300+ DSA Problems",
-      "context": "Solved 300+ Data Structures and Algorithms problems across arrays, strings, hashing, recursion, and trees on platforms like LeetCode and GeeksforGeeks."
+      "title": "500+ DSA Problems",
+      "context": "Solved 500+ Data Structures and Algorithms problems across arrays, linked lists, trees, graphs, recursion, dynamic programming, and hashing.",
+      "links": [
+        { "name": "LeetCode", "url": "https://leetcode.com/u/abhishek_kr18/" },
+        { "name": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/profile/abhishekkr18" },
+        { "name": "CodeChef", "url": "https://www.codechef.com/users/abhishek1818" }
+      ]
     },
     {
-      "title": "Open Source Contributor",
-      "context": "Contributor at GirlScript Summer of Code 2024."
+      "title": "CodeChef Rank 6,453",
+      "context": "Ranked 6,453 in CodeChef Starters 147 Division 4 with a score of 300."
+    },
+    {
+      "title": "Generative AI Certification",
+      "context": "Completed Introduction to Generative AI by Google Cloud through Coursera with a 100% grade."
+    },
+    {
+      "title": "Google Cybersecurity Certificate",
+      "context": "Earned the Google Cybersecurity Professional Certificate through Coursera, covering network security, threat detection, and incident response."
+    }
+  ],
+  "codingProfiles": [
+    {
+      "name": "LeetCode",
+      "handle": "abhishek_kr18",
+      "url": "https://leetcode.com/u/abhishek_kr18/",
+      "focus": "Data structures, algorithms, and interview preparation"
+    },
+    {
+      "name": "GeeksforGeeks",
+      "handle": "abhishekkr18",
+      "url": "https://www.geeksforgeeks.org/profile/abhishekkr18",
+      "focus": "Problem solving and core computer science"
+    },
+    {
+      "name": "CodeChef",
+      "handle": "abhishek1818",
+      "url": "https://www.codechef.com/users/abhishek1818",
+      "focus": "Competitive programming and contests"
     }
   ],
   "projects": [
     {
-      "title": "TravelUp",
-      "dates": "Mar 2025 – Apr 2025",
-      "stack": "MongoDB, Express.js, React.js, Node.js, Stripe",
+      "title": "ThreadServe",
+      "dates": "C++ Systems Project",
+      "stack": "C++20, TCP/IP, TCP Sockets, HTTP, Multithreading, Linux",
       "bullets": [
-        "Developed a full-stack travel platform using the MERN stack with JWT-based authentication and RESTful API architecture.",
-        "Designed MongoDB schemas and implemented CRUD operations for listings, bookings, and user management.",
-        "Structured backend routes to handle concurrent user interactions and secure session management."
+        "Engineered a multithreaded HTTP server in C++20 using TCP sockets, HTTP request parsing, routing, and a bounded thread pool for concurrent client handling.",
+        "Implemented concurrency control with mutexes and condition variables, request timeouts, structured logging, and graceful connection handling.",
+        "Integrated GoogleTest unit tests, Docker support, Linux compatibility, debugging workflows, and benchmark tooling."
       ],
       "links": [
-        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/travelup" },
-        { "name": "Live Demo", "url": "https://travelup-airbnb.vercel.app/listings" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/thread-serve" }
       ]
     },
     {
-      "title": "TransferIQ: Player Transfer Value Prediction",
-      "dates": "Jan 2026 – Mar 2026",
-      "stack": "Python, LSTM, XGBoost, NLP",
+      "title": "InternSetu",
+      "dates": "AI Recommendation Engine",
+      "stack": "Node.js, Gemini API, Multer, pdf-parse",
       "bullets": [
-        "Built an ML pipeline combining performance, injury, and sentiment data to predict football player transfer values.",
-        "Developed univariate and multivariate LSTM models for forecasting transfer values across multiple time horizons.",
-        "Applied ensemble learning (LSTM + XGBoost) achieving R-squared of 0.87 and 18% RMSE improvement over baseline."
+        "Architected a Node.js recommendation engine that extracts candidate information from resumes and maps profiles to 20+ internship opportunities through the Gemini API.",
+        "Automated resume validation, text extraction, and candidate-profile generation through Multer and pdf-parse.",
+        "Formulated a ranking algorithm across 10+ test profiles, reducing manual resume-processing effort by an estimated 80%."
       ],
       "links": [
-        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/Transfer-IQ" },
-        { "name": "Live Demo", "url": "https://transfer-iq.streamlit.app/" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/internsetu" },
+        { "name": "Live Demo", "url": "https://internsetudev.vercel.app/" }
       ]
     },
     {
-      "title": "AI Exam Notes Generator",
-      "dates": "Oct 2025 – Dec 2025",
-      "stack": "React, Node.js, MongoDB, Gemini API, Stripe",
+      "title": "DocMind",
+      "dates": "Document RAG Assistant",
+      "stack": "Python, LangChain, Mistral AI, ChromaDB, Streamlit",
       "bullets": [
-        "Engineered an AI SaaS platform generating exam notes, diagrams, and revision summaries using LLM APIs.",
-        "Implemented a credit-based monetization system with Stripe payments and token-based authentication.",
-        "Deployed a scalable production system supporting concurrent AI content generation requests."
+        "Created a document question-answering application that processes PDF and TXT files and generates context-aware responses through retrieval-augmented generation.",
+        "Orchestrated a semantic retrieval pipeline with LangChain, Mistral AI embeddings, ChromaDB, and Maximal Marginal Relevance search.",
+        "Delivered a Streamlit interface and reduced response latency to under 5 seconds during local testing."
       ],
       "links": [
-        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/exam-notes-generator" },
-        { "name": "Live Demo", "url": "https://exam-notes-generator-client.onrender.com/" }
+        { "name": "GitHub", "url": "https://github.com/abhishek-kr09/book-rag-assistant" },
+        { "name": "Live Demo", "url": "https://docmindassistant.streamlit.app/" }
       ]
     }
   ],
   "skills": [
     {
       "category": "Languages",
-      "items": ["C++", "Python", "JavaScript"]
+      "items": ["C++", "Python", "JavaScript", "SQL"]
+    },
+    {
+      "category": "C++ & Systems",
+      "items": ["STL", "TCP/IP", "TCP Sockets", "HTTP", "Multithreading", "Concurrency", "Mutexes", "Condition Variables", "Linux"]
+    },
+    {
+      "category": "Computer Science",
+      "items": ["Data Structures", "Algorithms", "OOP", "Object-Oriented Design", "Operating Systems", "Computer Networks", "DBMS"]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express.js", "RESTful APIs", "MVC Architecture"]
+      "items": ["Node.js", "Express.js", "REST APIs", "MVC Architecture", "JWT Authentication"]
+    },
+    {
+      "category": "Software Engineering",
+      "items": ["Object-Oriented Design", "REST APIs", "MVC Architecture", "Debugging", "Version Control"]
     },
     {
       "category": "Frontend",
@@ -92,29 +138,30 @@
     },
     {
       "category": "Databases",
-      "items": ["MongoDB", "SQL", "Redis"]
+      "items": ["MongoDB", "MySQL", "Redis", "SQL Querying"]
     },
     {
       "category": "Security",
-      "items": ["JWT Authentication", "Password Hashing (bcrypt)", "Role-Based Access Control"]
+      "items": ["JWT Authentication", "bcrypt", "Role-Based Access Control (RBAC)"]
     },
     {
-      "category": "Tools",
-      "items": ["Git", "GitHub", "Docker", "Postman"]
+      "category": "Testing & Tools",
+      "items": ["Unit Testing", "GoogleTest", "Debugging", "Git", "GitHub", "Docker", "Postman"]
     }
   ],
   "education": [
     {
-      "institution": "Heritage Institute of Technology, Kolkata",
+      "institution": "Heritage Institute of Technology",
       "degree": "B.Tech in Computer Science and Engineering (IoT and CSBT)",
       "dates": "2023 – 2027",
-      "score": "CGPA: 9.0 / 10"
+      "score": "CGPA: 8.9 / 10",
+      "location": "Kolkata, India"
     }
   ],
   "certifications": [
     {
       "title": "Google Cybersecurity Professional Certificate",
-      "context": "Completed Google Cybersecurity Professional Certificate, gaining hands-on exposure to network security, threat detection, and incident response."
+      "context": "Completed through Coursera, gaining hands-on exposure to network security, threat detection, and incident response."
     }
   ],
   "awards": [],

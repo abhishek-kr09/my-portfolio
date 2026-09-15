@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, Star, ShieldCheck } from 'lucide-react';
+import { Trophy, Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import resumeData from '../../data/resume.json';
 
 export const Achievements: React.FC = () => {
   const { achievements, certifications } = resumeData;
 
   const allItems = [
-    ...achievements.map(a => ({ ...a, type: 'achievement' })),
-    ...certifications.map(c => ({ ...c, type: 'certification' }))
+    ...achievements.map(a => ({ ...a, links: a.links ?? [], type: 'achievement' })),
+    ...certifications.map(c => ({ ...c, links: [], type: 'certification' }))
   ];
 
   if (allItems.length === 0) return null;
@@ -42,13 +42,28 @@ export const Achievements: React.FC = () => {
               <div className="relative z-10">
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
                   {item.type === 'certification' ? <ShieldCheck className="h-6 w-6" /> : 
-                   item.title.includes('300+') ? <Trophy className="h-6 w-6" /> : <Star className="h-6 w-6" />}
+                   item.title.includes('DSA') ? <Trophy className="h-6 w-6" /> : <Star className="h-6 w-6" />}
                 </div>
                 
                 <h3 className="mb-3 text-xl font-bold text-white">{item.title}</h3>
                 <p className="text-slate-400 leading-relaxed">
                   {item.context.replace(item.title, '').trim() || item.context}
                 </p>
+                {item.links.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-300 transition-colors hover:text-amber-200"
+                      >
+                        {link.name} <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

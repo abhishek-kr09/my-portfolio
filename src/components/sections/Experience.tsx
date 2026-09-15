@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Briefcase, Calendar } from 'lucide-react';
+import { ChevronDown, Briefcase, Calendar, ExternalLink, MapPin } from 'lucide-react';
 import resumeData from '../../data/resume.json';
 import { cn } from '../../lib/utils';
 
@@ -66,9 +66,10 @@ export const Experience: React.FC = () => {
                       <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                         {job.role}
                       </h3>
-                      <div className="mt-1 flex items-center gap-2 text-slate-400">
+                      <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-400">
                         <Briefcase className="h-4 w-4" />
                         <span className="font-medium text-slate-300">{job.company}</span>
+                        {job.location && <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4" />{job.location}</span>}
                       </div>
                     </div>
                     
@@ -77,6 +78,17 @@ export const Experience: React.FC = () => {
                         <Calendar className="h-4 w-4" />
                         {job.dates}
                       </div>
+                      {job.certificateUrl && (
+                        <a
+                          href={job.certificateUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={(event) => event.stopPropagation()}
+                          className="hidden items-center gap-1.5 text-sm font-semibold text-blue-300 transition-colors hover:text-blue-200 sm:inline-flex"
+                        >
+                          Certificate <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      )}
                       <motion.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
