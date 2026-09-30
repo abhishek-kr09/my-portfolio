@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           <div className="absolute -inset-4 rounded-[2.5rem] border border-blue-400/20 bg-blue-500/10 blur-2xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-slate-900/80 p-2 shadow-2xl shadow-blue-950/40">
             <img
-              src="/ak.png"
+              src="/ak.jpg"
               alt="Portrait of Abhishek Kumar"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
             />
