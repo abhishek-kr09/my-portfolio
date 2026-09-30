@@ -26,10 +26,7 @@ export const Hero: React.FC = () => {
               alt="Portrait of Abhishek Kumar"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
             />
-            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/15 bg-slate-950/75 p-4 backdrop-blur-md">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">Currently building</p>
-              <p className="mt-1 text-sm font-medium text-white">Reliable systems and useful AI products</p>
-            </div>
+            
           </div>
         </motion.div>
 
