@@ -29,14 +29,14 @@ export const Projects: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-md transition-all hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)]"
             >
-              <div className="p-8 md:p-10">
+              <div className="p-6 sm:p-8 md:p-10">
                 <div className="mb-4 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
                   Project {index + 1}
                 </div>
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors sm:text-2xl">
                       {project.title}
                     </h3>
                     <div className="text-sm font-medium text-slate-400 mb-4">

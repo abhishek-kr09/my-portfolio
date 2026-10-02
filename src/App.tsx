@@ -26,7 +26,7 @@ export default function App() {
           <AnimatedBackground />
           <Navigation />
           
-          <main className="relative z-10 pb-24 md:pb-0">
+          <main className="relative z-10 pb-6 lg:pb-0">
             <Hero />
             <Skills />
             <Experience />

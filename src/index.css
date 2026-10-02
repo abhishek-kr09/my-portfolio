@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   color-scheme: dark;
 }
 
@@ -16,6 +17,7 @@ body {
   font-family: var(--font-sans);
   background-color: #020617;
   color: #f8fafc;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

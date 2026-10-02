@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Award, Briefcase, Contact, FolderGit2, GraduationCap, House, Sparkles, Trophy } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
@@ -14,20 +14,10 @@ const navItems = [
   { name: 'Contact', href: '#contact' },
 ];
 
-const mobileNavItems = [
-  { name: 'Home', href: '#hero', icon: House },
-  { name: 'Skills', href: '#skills', icon: Sparkles },
-  { name: 'Work', href: '#experience', icon: Briefcase },
-  { name: 'Projects', href: '#projects', icon: FolderGit2 },
-  { name: 'Awards', href: '#achievements', icon: Award },
-  { name: 'Profiles', href: '#coding-profiles', icon: Trophy },
-  { name: 'Study', href: '#education', icon: GraduationCap },
-  { name: 'Contact', href: '#contact', icon: Contact },
-];
-
 export const Navigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,11 +38,19 @@ export const Navigation: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleEscape);
+    };
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    setIsMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +68,8 @@ export const Navigation: React.FC = () => {
         isScrolled ? "bg-slate-950/75 backdrop-blur-md shadow-[0_8px_30px_rgba(2,6,23,0.28)]" : "bg-transparent"
       )}
     >
-      <ul className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md">
+      <div className="mx-4 flex w-full max-w-6xl justify-end lg:justify-center">
+      <ul className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md lg:flex">
         {navItems.map((item) => {
           const isActive = activeSection === item.href.substring(1);
           return (
@@ -98,37 +97,44 @@ export const Navigation: React.FC = () => {
         })}
       </ul>
 
-      {/* Mobile Bottom Nav */}
-      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-md">
-        <ul className="grid grid-cols-7 items-center rounded-2xl border border-white/10 bg-slate-900/90 p-1.5 backdrop-blur-xl shadow-2xl">
-          {mobileNavItems.map((item) => {
-            const isActive = activeSection === item.href.substring(1);
-            const Icon = item.icon;
-            return (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  onClick={(e) => handleClick(e, item.href)}
-                  aria-current={isActive ? 'page' : undefined}
-                  className={cn(
-                    "relative flex flex-col items-center justify-center gap-1 rounded-xl py-2 text-[10px] font-medium transition-colors",
-                    isActive ? "text-blue-400" : "text-slate-500 hover:text-slate-300"
-                  )}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="mobile-nav-pill"
-                      className="absolute inset-0 rounded-full bg-blue-500/10"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                  <Icon className="relative z-10 h-4 w-4" />
-                  <span className="relative z-10">{item.name}</span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="relative lg:hidden">
+        <button
+          type="button"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 backdrop-blur-md transition-colors hover:bg-white/10"
+        >
+          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+
+        {isMenuOpen && (
+          <motion.ul
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            className="absolute right-0 top-14 w-52 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/95 p-2 shadow-2xl backdrop-blur-xl"
+          >
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={cn(
+                      "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                      isActive ? "bg-white/10 text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                    )}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
+          </motion.ul>
+        )}
+      </div>
       </div>
     </motion.nav>
   );

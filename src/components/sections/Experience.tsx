@@ -73,8 +73,8 @@ export const Experience: React.FC = () => {
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2 text-sm text-slate-400 bg-slate-900/50 px-3 py-1.5 rounded-full border border-white/5">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                      <div className="flex max-w-full items-center gap-2 text-sm text-slate-400 bg-slate-900/50 px-3 py-1.5 rounded-full border border-white/5">
                         <Calendar className="h-4 w-4" />
                         {job.dates}
                       </div>

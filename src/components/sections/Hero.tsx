@@ -11,20 +11,20 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center px-4 pb-16 pt-28 sm:px-6 lg:pt-24">
-      <div className="z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+    <section id="hero" className="relative flex min-h-screen items-center px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:pt-24">
+      <div className="z-10 mx-auto grid w-full max-w-6xl items-center gap-8 sm:gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative mx-auto w-full max-w-sm lg:mx-0"
+          className="relative mx-auto w-full max-w-xs lg:mx-0 lg:max-w-sm"
         >
           <div className="absolute -inset-4 rounded-[2.5rem] border border-blue-400/20 bg-blue-500/10 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-slate-900/80 p-2 shadow-2xl shadow-blue-950/40">
+          <div className="relative overflow-hidden rounded-4xl border border-white/15 bg-slate-900/80 p-2 shadow-2xl shadow-blue-950/40">
             <img
               src="/ak.jpg"
               alt="Portrait of Abhishek Kumar"
-              className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
+              className="aspect-16/10 w-full rounded-3xl object-cover object-top lg:aspect-4/5"
             />
             
           </div>
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mb-6 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl"
+          className="mb-6 wrap-break-word text-4xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl"
         >
           {basics.name.split(' ').map((name, i) => (
             <span key={i} className={i === 1 ? "bg-linear-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent" : ""}>
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mb-8 text-xl font-medium text-slate-300 sm:text-2xl"
+          className="mb-8 max-w-xl text-lg font-medium leading-snug text-slate-300 sm:text-2xl"
         >
           {basics.title}
         </motion.h2>
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mb-10 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg"
+          className="mb-10 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-lg"
         >
           {basics.summary}
         </motion.p>
@@ -76,11 +76,11 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="flex flex-col gap-4 sm:flex-row"
+          className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
         >
           <button
             onClick={scrollToExperience}
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-3.5 text-sm font-medium text-slate-950 transition-transform hover:scale-105 active:scale-95"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full bg-white px-6 py-3.5 text-sm font-medium text-slate-950 transition-transform hover:scale-105 active:scale-95 sm:w-auto sm:px-8"
           >
             <span className="absolute inset-0 bg-linear-to-r from-blue-100 to-indigo-100 opacity-0 transition-opacity group-hover:opacity-100"></span>
             <span className="relative flex items-center gap-2">
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
           <a
             href="/Abhishek_Kumar_Resume.pdf"
             download="Abhishek_Kumar_Resume.pdf"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95 sm:w-auto sm:px-8"
           >
             <span className="relative flex items-center gap-2">
               <Download className="h-4 w-4" />
